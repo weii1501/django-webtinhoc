@@ -31,7 +31,7 @@ jsonschema
 jsonschema-specifications
 oauthlib
 Pillow
-psycopg2-binary
+psycopg2-binary==2.9.5
 pyasn1
 pyasn1-modules
 pycparser
@@ -53,3 +53,5 @@ typing_extensions
 uritemplate
 urllib3
 zope.interface
+
+gunicorn==20.1.0
