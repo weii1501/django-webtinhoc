@@ -9,8 +9,13 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'webtinhoc_db',
+        # 'NAME': 'webtinhoc_db',
         # 'NAME': 'nettruyen_db',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'dCJ5wmBSekaxP32HS2kM',
+        'HOST': 'containers-us-west-53.railway.app',
+        'PORT': '7172',
     }
 }
 

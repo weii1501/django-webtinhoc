@@ -14,7 +14,12 @@ class Command(BaseCommand):
         articles = Articles.objects.all()
         threads = Thread.objects.all()
         tags = Tag.objects.all()
-        for article in threads:
+        for article in articles:
             random_tags = random.sample(list(tags), 2)
             article.tags.add(*random_tags)
             article.save()
+
+        for thread in threads:
+            random_tags = random.sample(list(tags), 2)
+            thread.tags.add(*random_tags)
+            thread.save()

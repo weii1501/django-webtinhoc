@@ -24,19 +24,20 @@ class Command(BaseCommand):
         # for topic in topics:
         #     topic.cover = 'article_images/img.png'
         #     topic.save()
-        # articles = Articles.objects.all()
-        # for article in articles:
-        #     random_tags = random.sample(list(tags), 3)
-        #     article.cover = 'article_images/img.png'
-        #     article.tags.set(random_tags)
-        #     article.save()
-        # threads = Thread.objects.all()
-        # for thread in threads:
-        #     random_tags = random.sample(list(tags), 3)
-        #     thread.tags.set(random_tags)
-        #     thread.status = 'C'
-        #     thread.cover = 'article_images/img.png'
-        #     thread.save()
+        articles = Articles.objects.all()
+        for article in articles:
+            # random_tags = random.sample(list(tags), 3)
+            article.cover = 'https://atpcontent.vn/wp-content/uploads/2021/09/cb.jpg'
+            article.status = 'P'
+            # article.tags.set(random_tags)
+            article.save()
+        threads = Thread.objects.all()
+        for thread in threads:
+            # random_tags = random.sample(list(tags), 3)
+            # thread.tags.set(random_tags)
+            thread.status = 'P'
+            thread.cover = 'https://atpcontent.vn/wp-content/uploads/2021/09/cb.jpg'
+            thread.save()
         # categories = Category.objects.all()
         #
         # for category in categories:
