@@ -43,7 +43,6 @@ PyYAML
 referencing
 requests
 requests-oauthlib
-rpds-py
 service-identity
 six
 soupsieve
