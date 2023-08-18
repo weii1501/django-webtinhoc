@@ -1,0 +1,39 @@
+# build_files.sh
+pip install -r requirements.txt
+
+# make migrations
+python3.9 manage.py migrate
+python3.9 manage.py collectstatic
+Step 2: In your projects root directory create a new JSON file and name it vercel.json then paste the code below inside it and change the project name.
+
+
+COPY
+
+COPY
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "django-webtinhoc/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "django-webtinhoc/wsgi.py"
+    }
+  ]
+}
