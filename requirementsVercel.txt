@@ -55,3 +55,6 @@ urllib3
 zope.interface
 
 gunicorn==20.1.0
+
+whitenoise==6.2.0
+Brotli==1.0.9
