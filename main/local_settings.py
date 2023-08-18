@@ -11,11 +11,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'webtinhoc_db',
         # 'NAME': 'nettruyen_db',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'dCJ5wmBSekaxP32HS2kM',
-        'HOST': 'containers-us-west-53.railway.app',
-        'PORT': '7172',
+        'NAME': 'nswfxjph',
+        'USER': 'nswfxjph',
+        'PASSWORD': 'PB1DwOmi4X5J7n5X_QkDk_mONtMkXa0F',
+        'HOST': 'tiny.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 

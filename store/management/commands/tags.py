@@ -14,11 +14,11 @@ class Command(BaseCommand):
     help = 'Create dummy data for tag model'
 
     def handle(self, *args, **options):
-        # tags = tagsStr.split(' #')
-        # for tag in tags:
-        #     print(tag)
-        #     Tag.objects.create(name=tag)
-        # print('done')
+        tags = tagsStr.split(' #')
+        for tag in tags:
+            print(tag)
+            Tag.objects.create(name=tag)
+        print('done')
         # tags = Tag.objects.all()
         # topics = Topic.objects.all()
         # for topic in topics:

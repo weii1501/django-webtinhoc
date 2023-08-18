@@ -53,6 +53,7 @@ typing_extensions
 uritemplate
 urllib3
 zope.interface
+pyOpenSSL
 
 gunicorn==20.1.0
 
