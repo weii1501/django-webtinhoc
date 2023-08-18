@@ -37,7 +37,7 @@ CORS_ALLOW_HEADERS = [
 CORS_ORIGIN_WHITELIST = [
     "http://192.168.0.201:3002/",
     "http://localhost:3000/",
-    "https://next-webtinhoc-9iuoubjfa-weii1501.vercel.app/"
+    "https://next-webtinhoc.vercel.app/"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -49,14 +49,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
     "http://192.168.0.201:3000",
-    "https://next-webtinhoc-9iuoubjfa-weii1501.vercel.app"
+    "https://next-webtinhoc.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000/",
     "http://localhost:3000/",
     "http://192.168.0.201:3000/",
-    "https://next-webtinhoc-9iuoubjfa-weii1501.vercel.app/"
+    "https://next-webtinhoc.vercel.app/"
 ]
 
 DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
