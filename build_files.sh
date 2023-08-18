@@ -4,4 +4,4 @@ pip install gunicorn
 pip install rpds-py
 pip install -r requirementsVercel.txt
 
-python manage.py collectstatic --no-input
+python manage.py collectstatic
