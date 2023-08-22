@@ -29,26 +29,27 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    
-    email= models.EmailField(_('email address'), unique=True)
-    username= models.CharField( max_length=150, unique=True)
-    first_name= models.CharField( max_length=255, blank=True)
-    last_name=models.CharField( max_length=255, blank=True)
-    start_date=models.DateTimeField(default=timezone.now)
-    about=models.TextField(_('about'),max_length=500, blank=True)
-    is_staff=models.BooleanField(default=True)
-    is_active=models.BooleanField(default=True)
-    is_auth=models.BooleanField(default=True)
-    profile_image = models.ImageField(upload_to='profile_pictures/', default='profile_pictures/khoi-tai-san-kech-xu-cua-lee-min-ho-nam-2021.jpg', null=True, blank=True)
-    objects=CustomUserManager()
-    location=models.CharField(max_length=100, blank=True)
-    birth_year=models.IntegerField(null=True, blank=True)
-    number_phone=models.CharField(max_length=10, blank=True)
-    facebook=models.CharField(max_length=100, blank=True)
-    tiktok=models.CharField(max_length=100, blank=True)
+    email = models.EmailField(_('email address'), unique=True)
+    username = models.CharField(max_length=150, unique=True)
+    first_name = models.CharField(max_length=255, blank=True)
+    last_name = models.CharField(max_length=255, blank=True)
+    start_date = models.DateTimeField(default=timezone.now)
+    about = models.TextField(_('about'), max_length=500, blank=True)
+    is_staff = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    is_auth = models.BooleanField(default=True)
+    profile_image = models.ImageField(upload_to='profile_pictures/',
+                                      default='profile_pictures/khoi-tai-san-kech-xu-cua-lee-min-ho-nam-2021.jpg',
+                                      null=True, blank=True)
+    objects = CustomUserManager()
+    location = models.CharField(max_length=100, blank=True)
+    birth_year = models.IntegerField(null=True, blank=True)
+    number_phone = models.CharField(max_length=10, blank=True)
+    facebook = models.CharField(max_length=100, blank=True)
+    tiktok = models.CharField(max_length=100, blank=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS=['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     def __str__(self):
         return self.username

@@ -26,6 +26,7 @@ def get_tags_list(request):
         'data': serializer.data
     })
 
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def get_articles_thread_tags(request, tag_slug):
@@ -41,15 +42,18 @@ def get_articles_thread_tags(request, tag_slug):
         }
     })
 
+
 class ListTopTags(ListAPIView):
     permission_classes = [AllowAny]
     serializer_class = TagsListSerializer
+
     def get_queryset(self):
         top_tags = Tag.objects.annotate(
-            threads__get_total_likes=Count('threads__likes'), articles__total_likes=Count('articles__likes')
+            threads_total_likes=Count('threads__likes'),
+            articles_total_likes=Count('articles__likes')
         ).order_by(
-            'threads__get_total_likes',
-            'articles__total_likes',
+            'threads_total_likes',
+            'articles_total_likes',
             'threads__created_at',
             'articles__created_at',
             'threads__likes',

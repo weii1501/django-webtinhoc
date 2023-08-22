@@ -10,7 +10,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'webtinhoc_db',
-        # 'NAME': 'nettruyen_db',
         'NAME': 'nswfxjph',
         'USER': 'nswfxjph',
         'PASSWORD': 'PB1DwOmi4X5J7n5X_QkDk_mONtMkXa0F',

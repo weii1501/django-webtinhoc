@@ -56,6 +56,6 @@ zope.interface
 pyOpenSSL
 
 gunicorn==20.1.0
-
+autoslug
 whitenoise==6.2.0
 Brotli==1.0.9

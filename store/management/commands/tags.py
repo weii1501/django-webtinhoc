@@ -18,7 +18,7 @@ class Command(BaseCommand):
         for tag in tags:
             print(tag)
             Tag.objects.create(name=tag)
-        print('done')
+        # print('done')
         # tags = Tag.objects.all()
         # topics = Topic.objects.all()
         # for topic in topics:
@@ -27,7 +27,7 @@ class Command(BaseCommand):
         articles = Articles.objects.all()
         for article in articles:
             # random_tags = random.sample(list(tags), 3)
-            article.cover = 'https://atpcontent.vn/wp-content/uploads/2021/09/cb.jpg'
+            article.cover = None
             article.status = 'P'
             # article.tags.set(random_tags)
             article.save()
@@ -36,7 +36,7 @@ class Command(BaseCommand):
             # random_tags = random.sample(list(tags), 3)
             # thread.tags.set(random_tags)
             thread.status = 'P'
-            thread.cover = 'https://atpcontent.vn/wp-content/uploads/2021/09/cb.jpg'
+            thread.cover = None
             thread.save()
         # categories = Category.objects.all()
         #

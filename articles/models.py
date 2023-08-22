@@ -1,5 +1,5 @@
 from django.db import models
-
+from autoslug import AutoSlugField
 from tags.models import Tag
 from topics.models import Topic
 from users.models import CustomUser
@@ -8,18 +8,19 @@ from django.utils.text import slugify
 
 # Create your models here.
 class Articles(models.Model):
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='articles')
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='articles')
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='topic_articles_set')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='user_articles_set')
     title = models.CharField(max_length=255)
-    slug = models.TextField(blank=True)
+    slug = AutoSlugField(max_length=100, populate_from='title', editable=True, blank=True, unique=True)
+    article_description = models.TextField(blank=True, null=True)
     content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
-    publish= models.BooleanField(default=True)
+    publish = models.BooleanField(default=True)
     views = models.PositiveIntegerField(default=0)
     cover = models.ImageField(upload_to='article_images', blank=True, null=True)
-    tags = models.ManyToManyField(Tag, blank=True, related_name='articles')
+    tags = models.ManyToManyField(Tag, blank=True, related_name='tags_articles_set')
     num_comments = models.IntegerField(default=0)
-    likes = models.ManyToManyField(CustomUser, blank=True, related_name='articles_liked')
+    likes = models.ManyToManyField(CustomUser, blank=True, related_name='likes_customeruser_articles_set')
     num_views = models.PositiveIntegerField(default=0)
 
     STATUS_THREAD_CHOICES = (

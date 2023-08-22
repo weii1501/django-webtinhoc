@@ -298,7 +298,7 @@ class Command(BaseCommand):
             category_topics = category_data["topics"]
 
             try:
-                category = Category.objects.get(name=category_name)
+                category = Category.objects.filter(name=category_name).first()
             except Category.DoesNotExist:
                 # Handle the case when the category does not exist
                 continue

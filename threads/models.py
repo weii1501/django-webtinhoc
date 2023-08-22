@@ -1,3 +1,4 @@
+from autoslug import AutoSlugField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.utils.text import slugify
@@ -12,7 +13,7 @@ class Thread(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='threads')
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='threads')
     title = models.CharField(max_length=255)
-    slug = models.CharField(max_length=255,blank=True)
+    slug = AutoSlugField(max_length=100, populate_from='title', editable=True, blank=True, unique=True)
     content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
     publish= models.BooleanField(default=True)

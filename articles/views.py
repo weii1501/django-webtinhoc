@@ -81,6 +81,8 @@ def post_article(request):
     title = request.data.get('title')
     content = request.data.get('content')
     tags_str = request.data.get('tags')
+    cover = request.data.get('cover')
+    article_description = request.data.get('article_description')
     status = 'P'
     publish=True
 
@@ -91,29 +93,34 @@ def post_article(request):
     except Topic.DoesNotExist:
         return Response({'detail': 'Invalid topic ID'}, status=400)
 
-    article = Articles.objects.create(user=user,publish=publish, topic=topic, title=title, content=content, status=status)
+    article = Articles.objects.create(user=user,publish=publish, topic=topic, title=title, content=content, status=status, article_description=article_description)
 
-    # Tạo đối tượng BeautifulSoup để phân tích HTML
-    soup = BeautifulSoup(content, 'html.parser')
+    if cover:
+        article.cover.save(f'{article.slug}-cover.png', cover, save=True)
+        print("cover successful")
+    else:
+        print("no cover")
+        # Tạo đối tượng BeautifulSoup để phân tích HTML
+        soup = BeautifulSoup(content, 'html.parser')
 
-    # Tìm tất cả các thẻ img trong trường content
-    img_tags = soup.find_all('img')
+        # Tìm tất cả các thẻ img trong trường content
+        img_tags = soup.find_all('img')
 
-    # Duyệt qua từng thẻ img và trích xuất dữ liệu hình ảnh
-    for img in img_tags:
-        # Lấy giá trị thuộc tính src
-        src = img['src']
+        # Duyệt qua từng thẻ img và trích xuất dữ liệu hình ảnh
+        for img in img_tags:
+            # Lấy giá trị thuộc tính src
+            src = img['src']
 
-        # Kiểm tra xem source có phải là mã base64 không
-        if src.startswith('data:image/'):
-            # Tách phần mã base64 từ source
-            base64_data = src.split(';base64,', 1)[1]
+            # Kiểm tra xem source có phải là mã base64 không
+            if src.startswith('data:image/'):
+                # Tách phần mã base64 từ source
+                base64_data = src.split(';base64,', 1)[1]
 
-            # Giải mã base64 thành dữ liệu hình ảnh
-            image_data = base64.b64decode(base64_data)
+                # Giải mã base64 thành dữ liệu hình ảnh
+                image_data = base64.b64decode(base64_data)
 
-            # Lưu dữ liệu hình ảnh vào trường cover của article
-            article.cover.save('cover_image.png', ContentFile(image_data), save=False)
+                # Lưu dữ liệu hình ảnh vào trường cover của article
+                article.cover.save('cover_image.png', ContentFile(image_data), save=False)
 
     if tags_str:
         tags_str = tags_str.split(',')
