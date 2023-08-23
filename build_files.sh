@@ -18,6 +18,7 @@ pip install djangorestframework-camel-case
 pip install gunicorn==20.1.0
 pip install whitenoise==6.2.0
 pip install Brotli==1.0.9
+pip install drf_spectacular
 #pip install rpds-py
 #pip install -r requirementsVercel.txt
 
