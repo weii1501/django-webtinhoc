@@ -11,6 +11,7 @@ pip install django-cors-headers
 pip install easy-thumbnails
 pip install django-allauth
 pip install psycopg2-binary
+pip install django-autoslug
 #pip install gunicorn
 #pip install rpds-py
 #pip install -r requirementsVercel.txt
