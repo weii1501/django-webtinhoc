@@ -7,6 +7,7 @@ pip install channels
 pip install daphne
 pip install djangorestframework
 pip install django-ckeditor
+pip install django-cors-headers
 #pip install django-allauth
 #pip install gunicorn
 #pip install rpds-py
