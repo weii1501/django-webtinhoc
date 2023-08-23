@@ -4,6 +4,7 @@ source /opt/render/project/src/.venv/bin/activate
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade setuptools
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade wheel
+pip install daphne
 pip install django-allauth
 pip install gunicorn
 pip install rpds-py
