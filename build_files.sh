@@ -10,10 +10,12 @@ pip install django-ckeditor
 pip install django-cors-headers
 pip install easy-thumbnails
 pip install django-allauth
-pip install psycopg2-binary
+pip install psycopg2-binary==2.9.5
 pip install django-autoslug
 pip install whitenoise
-#pip install gunicorn
+pip install gunicorn==20.1.0
+pip install whitenoise==6.2.0
+pip install Brotli==1.0.9
 #pip install rpds-py
 #pip install -r requirementsVercel.txt
 
