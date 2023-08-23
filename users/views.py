@@ -1,18 +1,14 @@
-from django.contrib.auth.models import Group
-
 from allauth.socialaccount import providers
 from allauth.socialaccount.models import SocialApp
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-from dj_rest_auth.registration.views import SocialLoginView
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_protect
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import ListAPIView
-from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 
@@ -27,10 +23,6 @@ from .serializers import CustomUserSerializer, CustomUserTopSerializer, CustomUs
 
 
 # @api_view(['POST'])
-class GoogleLogin(SocialLoginView):
-    adapter_class = GoogleOAuth2Adapter
-    callback_url = "http://localhost:3000/"
-    client_class = OAuth2Client
 
 
 @api_view(['POST'])
