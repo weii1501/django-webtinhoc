@@ -9,7 +9,7 @@ pip install djangorestframework
 pip install django-ckeditor
 pip install django-cors-headers
 pip install easy-thumbnails
-#pip install django-allauth
+pip install django-allauth
 #pip install gunicorn
 #pip install rpds-py
 #pip install -r requirementsVercel.txt
