@@ -6,6 +6,7 @@ pip install django
 pip install channels
 pip install daphne
 pip install djangorestframework
+pip install djangorestframework_simplejwt
 pip install django-ckeditor
 pip install django-cors-headers
 pip install easy-thumbnails
