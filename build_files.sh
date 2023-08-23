@@ -5,6 +5,7 @@ source /opt/render/project/src/.venv/bin/activate
 pip install django
 pip install channels
 pip install daphne
+pip install djangorestframework
 #pip install django-allauth
 #pip install gunicorn
 #pip install rpds-py
