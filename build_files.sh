@@ -14,6 +14,7 @@ pip install psycopg2-binary==2.9.5
 pip install django-autoslug
 pip install whitenoise
 pip install djangorestframework_simplejwt
+pip install djangorestframework-camel-case
 pip install gunicorn==20.1.0
 pip install whitenoise==6.2.0
 pip install Brotli==1.0.9
