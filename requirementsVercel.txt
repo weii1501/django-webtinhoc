@@ -13,7 +13,7 @@ daphne
 defusedxml
 dj-rest-auth
 Django==3.2
-django-allauth
+
 django-autoslug
 django-ckeditor
 django-cors-headers
