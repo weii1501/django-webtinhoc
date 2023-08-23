@@ -39,7 +39,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_auth = models.BooleanField(default=True)
     profile_image = models.ImageField(upload_to='profile_pictures/',
-                                      default='profile_pictures/khoi-tai-san-kech-xu-cua-lee-min-ho-nam-2021.jpg',
+                                      default='profile_pictures/avatar_default.jpg',
                                       null=True, blank=True)
     objects = CustomUserManager()
     location = models.CharField(max_length=100, blank=True)
