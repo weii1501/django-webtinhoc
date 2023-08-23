@@ -18,7 +18,7 @@ class Command(BaseCommand):
         for tag in tags:
             print(tag)
             Tag.objects.create(name=tag)
-        # print('done')
+        print('done')
         # tags = Tag.objects.all()
         # topics = Topic.objects.all()
         # for topic in topics:

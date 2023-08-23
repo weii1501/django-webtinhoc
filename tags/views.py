@@ -50,16 +50,10 @@ class ListTopTags(ListAPIView):
     def get_queryset(self):
         top_tags = Tag.objects.annotate(
             threads_total_likes=Count('threads__likes'),
-            articles_total_likes=Count('articles__likes')
+            articles_total_likes=Count('tags_articles_set__likes')
         ).order_by(
             'threads_total_likes',
             'articles_total_likes',
-            'threads__created_at',
-            'articles__created_at',
-            'threads__likes',
-            'articles__likes',
-            'threads__num_views',
-            'articles__num_views',
         ).distinct()
         unique_tags = []
         tag_ids = set()
