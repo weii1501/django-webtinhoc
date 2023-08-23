@@ -4,7 +4,7 @@ source /opt/render/project/src/.venv/bin/activate
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip
 pip install django
 pip install channels
-#pip install daphne
+pip install daphne
 #pip install django-allauth
 #pip install gunicorn
 #pip install rpds-py
