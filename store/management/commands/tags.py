@@ -8,7 +8,7 @@ from tags.models import Tag
 from threads.models import Thread
 from topics.models import Topic
 
-tagsStr = ' #technology #blockchaintechnology #neoculturetechnology #informationtechnology #bitcointechnology #newtechnology #biotechnology #technologynews #nanotechnology #technologyrocks #instatechnology #technologythesedays #futuretechnology #smarthometechnology #dentaltechnology #artechnology #womenintechnology #smarttechnology #scienceandtechnology #beautyoftechnology #fashioninstituteoftechnology #artandtechnology #foodtechnology #technologysolutions #fashiontechnology #wearabletechnology #total_technology #technologyblog #medicaltechnology #massachusettsinstituteoftechnology #moderntechnology #injentechnology #creativetechnology #musictechnology #technologytrends #technologylover #latesttechnology #primitivetechnology #greentechnology #assistivetechnology'
+tagsStr = 'technology #blockchaintechnology #neoculturetechnology #informationtechnology #bitcointechnology #newtechnology #biotechnology #technologynews #nanotechnology #technologyrocks #instatechnology #technologythesedays #futuretechnology #smarthometechnology #dentaltechnology #artechnology #womenintechnology #smarttechnology #scienceandtechnology #beautyoftechnology #fashioninstituteoftechnology #artandtechnology #foodtechnology #technologysolutions #fashiontechnology #wearabletechnology #total_technology #technologyblog #medicaltechnology #massachusettsinstituteoftechnology #moderntechnology #injentechnology #creativetechnology #musictechnology #technologytrends #technologylover #latesttechnology #primitivetechnology #greentechnology #assistivetechnology'
 
 class Command(BaseCommand):
     help = 'Create dummy data for tag model'

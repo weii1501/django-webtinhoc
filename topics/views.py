@@ -30,7 +30,7 @@ def list_topic(request):
 def detail_topic(request, topic_slug):
 
     try:
-        topic = Topic.objects.get(slug=topic_slug)
+        topic = Topic.objects.filter(slug=topic_slug).first()
     except Topic.DoesNotExist:
         return Response({'detail': 'topic not found.'}, status=404)
 

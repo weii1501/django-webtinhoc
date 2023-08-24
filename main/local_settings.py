@@ -10,11 +10,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'webtinhoc_db',
-        'NAME': 'nswfxjph',
-        'USER': 'nswfxjph',
-        'PASSWORD': 'PB1DwOmi4X5J7n5X_QkDk_mONtMkXa0F',
-        'HOST': 'tiny.db.elephantsql.com',
-        'PORT': '5432',
+        'NAME': 'webtinhocdb',
+        'USER': 'webtinhocdb',
+        'PASSWORD': 'cGbnDO3bVORCGAORjjESPH5o61ZEtgxs',
+        'HOST': 'dpg-cjjief7jbvhs73d494u0-a.singapore-postgres.render.com',
+        'PORT': '5432'
     }
 }
 
