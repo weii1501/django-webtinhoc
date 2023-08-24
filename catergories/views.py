@@ -16,7 +16,7 @@ from rest_framework.permissions import AllowAny
 @api_view(['GET'])
 def list_category_topic(request):
     categories = Category.objects.all()
-    serializer = CategoryListTopicsSerializer(categories, many=True)
+    serializer = CategoryDetailSerializer(categories, many=True)
     return Response(serializer.data)
 # class CategoryListAPIView(ListAPIView):
 #     queryset = Category.objects.all()
