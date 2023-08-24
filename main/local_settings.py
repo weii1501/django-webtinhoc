@@ -9,7 +9,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'webtinhoc_db',
+        # 'NAME': 'webtinhoc_db',
         'NAME': 'webtinhocdb',
         'USER': 'webtinhocdb',
         'PASSWORD': 'cGbnDO3bVORCGAORjjESPH5o61ZEtgxs',
