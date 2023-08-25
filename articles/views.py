@@ -164,3 +164,10 @@ def like_article(request):
             }, status=200)
 
     # return Response({'detail': 'You liked this article'}, status=200)
+
+
+@api_view(['GET'])
+def get_all(request):
+    queryset = Articles.objects.filter(publish__exact=True).order_by('-created_at')
+    serializer = ArticleSerializer(queryset, many=True)
+    return Response(serializer.data)

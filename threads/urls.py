@@ -15,4 +15,7 @@ urlpatterns = [
     path('like/', views.like_thread, name='thread-like'),
     # api test list all pagination
     path('list-all/', views.GetThreadListAPIView.as_view(), name='thread-list-all'),
+
+    # api get all thread
+    path('list/', views.get_all, name='thread-list'),
 ]

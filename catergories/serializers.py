@@ -19,25 +19,27 @@ class CategorySerializer(serializers.ModelSerializer):
     #     serializer = self.__class__(children, many=True)
     #     return serializer.data
     #
-    topics=TopicCategoriesSerializer(many=True)
+    topics = TopicCategoriesSerializer(many=True)
+
     class Meta:
-        model= Category
-        fields=['id', 'name', 'slug', 'description', 'num_posts', 'topics', 'parent', 'cover']
+        model = Category
+        fields = ['id', 'name', 'slug', 'description', 'num_posts', 'topics', 'parent', 'cover']
 
 
 class CategoryDetailSerializer(serializers.ModelSerializer):
-    children= serializers.SerializerMethodField()
+    children = serializers.SerializerMethodField()
     parent = CategorySerializer()
 
     def get_children(self, obj):
-        children=obj.children.all()
+        children = obj.children.all()
         serializer = self.__class__(children, many=True)
         return serializer.data
 
     # topics=TopicCategoriesSerializer(many=True)
     class Meta:
-        model= Category
-        fields=['id', 'name', 'slug', 'description', 'num_posts', 'children', 'cover', 'parent' ]
+        model = Category
+        fields = ['id', 'name', 'slug', 'description', 'num_posts', 'children', 'cover', 'parent']
+
 
 class CategoryListTopicsSerializer(serializers.ModelSerializer):
     children = serializers.SerializerMethodField()
@@ -65,8 +67,9 @@ class TopicFilterSerializer(serializers.ModelSerializer):
         for thread in threads:
             total_replies += Reply.objects.filter(user=user, thread=thread).count()
         return total_replies
+
     def get_total_views(self, obj):
-        user = self.context['user']   # Lấy thông tin người dùng từ context
+        user = self.context['user']  # Lấy thông tin người dùng từ context
         thread_views = obj.threads.filter(user=user).aggregate(total_views=Sum('num_views'))['total_views']
         article_views = obj.articles.filter(user=user).aggregate(total_views=Sum('num_views'))['total_views']
 
@@ -96,4 +99,16 @@ class TopicFilterSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class CategoryBuildSitemapSerializer(serializers.ModelSerializer):
+    children = serializers.SerializerMethodField()
+    parent = CategorySerializer()
+    topics = TopicSerializer(many=True)
 
+    def get_children(self, obj):
+        children = obj.children.all()
+        serializer = self.__class__(children, many=True)
+        return serializer.data
+
+    class Meta:
+        model = Category
+        fields = '__all__'

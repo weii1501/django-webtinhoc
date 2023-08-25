@@ -9,4 +9,6 @@ urlpatterns = [
     # Other user-related URLs for the app
     # like article
     path('like/', views.like_article, name='article-like'),
+    # get all article
+    path('list/', views.get_all, name='article-list'),
 ]

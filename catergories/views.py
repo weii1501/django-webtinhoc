@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .models import Category
-from .serializers import CategorySerializer, CategoryDetailSerializer, CategoryListTopicsSerializer
+from .serializers import CategorySerializer, CategoryDetailSerializer, CategoryListTopicsSerializer, \
+    CategoryBuildSitemapSerializer
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -21,6 +22,12 @@ def list_category_topic(request):
 # class CategoryListAPIView(ListAPIView):
 #     queryset = Category.objects.all()
 #     serializer_class = CategoryListTopicsSerializer
+
+@api_view(['GET'])
+def list_topics_of_categories(request):
+    categories = Category.objects.all()
+    serializer = CategoryListTopicsSerializer(categories, many=True)
+    return Response(serializer.data)
 
 
 @api_view(['GET'])
@@ -67,6 +74,13 @@ def category_detail(request):
         return Response({'detail': 'Category not found.'}, status=404)
     print(category)
     return Response({'ok': True, 'data': CategoryDetailSerializer(category).data})
+
+
+@api_view(['GET'])
+def sitemap(request):
+    categories = Category.objects.filter(parent=None)
+    serializer = CategoryBuildSitemapSerializer(categories, many=True)
+    return Response(serializer.data)
 
 
 

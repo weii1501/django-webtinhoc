@@ -202,3 +202,11 @@ class GetThreadListAPIView(ListAPIView):
     def get_queryset(self):
         return Thread.objects.filter(publish=True).order_by('-created_at')
 
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all(request):
+    queryset = Thread.objects.all()
+    serializer = ThreadSerializer(queryset, many=True)
+    return Response(serializer.data)
+
