@@ -9,12 +9,12 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'webtinhoc_db',
-        'NAME': 'webtinhocdb',
-        'USER': 'webtinhocdb',
-        'PASSWORD': 'cGbnDO3bVORCGAORjjESPH5o61ZEtgxs',
-        'HOST': 'dpg-cjjief7jbvhs73d494u0-a',
-        'PORT': '5432'
+        'NAME': 'webtinhoc_db',
+        # 'NAME': 'webtinhocdb',
+        # 'USER': 'webtinhocdb',
+        # 'PASSWORD': 'cGbnDO3bVORCGAORjjESPH5o61ZEtgxs',
+        # 'HOST': 'dpg-cjjief7jbvhs73d494u0-a',
+        # 'PORT': '5432'
         # postgres://webtinhocdb:cGbnDO3bVORCGAORjjESPH5o61ZEtgxs@dpg-cjjief7jbvhs73d494u0-a/webtinhocdb
     }
 }
