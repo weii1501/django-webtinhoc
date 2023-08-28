@@ -9,13 +9,21 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'webtinhoc_db',
+        # 'NAME': 'webtinhoc_db',
+
+        # postgres://webtinhocdb:cGbnDO3bVORCGAORjjESPH5o61ZEtgxs@dpg-cjjief7jbvhs73d494u0-a/webtinhocdb
         # 'NAME': 'webtinhocdb',
         # 'USER': 'webtinhocdb',
         # 'PASSWORD': 'cGbnDO3bVORCGAORjjESPH5o61ZEtgxs',
         # 'HOST': 'dpg-cjjief7jbvhs73d494u0-a',
         # 'PORT': '5432'
-        # postgres://webtinhocdb:cGbnDO3bVORCGAORjjESPH5o61ZEtgxs@dpg-cjjief7jbvhs73d494u0-a/webtinhocdb
+
+        # postgres://default:iSsq2GRYdfL4@ep-bold-resonance-59971059.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'iSsq2GRYdfL4',
+        'HOST': 'ep-bold-resonance-59971059.ap-southeast-1.postgres.vercel-storage.com',
+        'PORT': '5432'
     }
 }
 
